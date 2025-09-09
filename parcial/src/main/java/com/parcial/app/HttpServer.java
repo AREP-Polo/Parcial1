@@ -5,12 +5,13 @@ import java.io.*;
 
 public class HttpServer {
   public static void main(String[] args) throws IOException {
-    int port = 36000;
+   int port = 8080;
    ServerSocket serverSocket = null;
    try { 
       serverSocket = new ServerSocket(port);
+      System.out.println("Conected to the server by the port" + port);
    } catch (IOException e) {
-      System.err.println("Could not listen on port: 35000.");
+      System.err.println("Could not listen on port: 8080.");
       System.exit(1);
    }
 
