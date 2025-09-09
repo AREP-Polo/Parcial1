@@ -2,27 +2,49 @@
 <html>
 
 <head>
-    <title>Form Example</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KV Quick Test</title>
+    <style>
+    </style>
+    <script>
+        function openUrl(url, cb) {
+            var x = new XMLHttpRequest();
+            x.onreadystatechange = function () { if (x.readyState === 4) { cb(x); } };
+            x.open('GET', url, true);
+            x.send();
+        }
+
+        function getKV() {
+            var k = document.getElementById('get-key').value;
+            openUrl('/getkv?key=' + encodeURIComponent(k), function (r) { document.getElementById('get-response').textContent = r.responseText; });
+        }
+
+        function setKV() {
+            var k = document.getElementById('set-key').value; var v = document.getElementById('set-value').value;
+            openUrl('/setkv?key=' + encodeURIComponent(k) + '&value=' + encodeURIComponent(v), function (r) { document.getElementById('set-response').textContent = r.responseText; });
+        }
+    </script>
 </head>
 
 <body>
-    <h1>Form with GET</h1>
-    <form action="/hello">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" value="John"><br><br>
-        <input type="button" value="Submit" onclick="loadGetMsg()">
-    </form>
-    <div id="getrespmsg"></div>
+    <h2>Get from backend</h2>
+    <div class="row">
+        <label>Key:</label>
+        <input id="get-key" type="text" placeholder="key">
+        <button onclick="getKV()">Send</button>
+    </div>
+    <div id="get-response"></div>
 
-    <script>
-        function loadGetMsg() {
-            let nameVar = document.getElementById("name").value;
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function () {document.getElementById("getrespmsg").innerHTML = this.responseText;}
-            xhttp.open("GET", "/hello?name=" + nameVar);
-            xhttp.send();}
-    </script>
+    <h2 style="margin-top:18px">Set in backend</h2>
+    <div class="row">
+        <label>Key:</label>
+        <input id="set-key" type="text" placeholder="key">
+        <label>Value:</label>
+        <input id="set-value" type="text" placeholder="value">
+        <button onclick="setKV()">Send</button>
+    </div>
+    <div id="set-response"></div>
 </body>
+
 </html>
