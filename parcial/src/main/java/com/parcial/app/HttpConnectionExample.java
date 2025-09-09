@@ -14,11 +14,12 @@ public class HttpConnectionExample {
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
-        
-        //The following invocation perform the connection implicitly before getting the code
+
+        // The following invocation perform the connection implicitly before getting the
+        // code
         int responseCode = con.getResponseCode();
         System.out.println("GET Response Code :: " + responseCode);
-        
+
         if (responseCode == HttpURLConnection.HTTP_OK) { // success
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     con.getInputStream()));
@@ -38,4 +39,4 @@ public class HttpConnectionExample {
         System.out.println("GET DONE");
     }
 
-} 
+}
