@@ -84,21 +84,6 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
-        <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-        <goals>
-          <goal>exec</goal>
-        </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <mainClass>com.parcial.app.HttpServer</mainClass>
-        </configuration>
-      </plugin>
       </plugins>
     </pluginManagement>
   </build>
