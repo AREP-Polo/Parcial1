@@ -59,9 +59,7 @@ servidor de ejemplo.
 
 Puedes ver una demostración en el siguiente video:
 
-<video src="res/video.mp4" controls width="600">
-	Tu navegador no soporta la reproducción de video.
-</video>
+https://github.com/AREP-Polo/Parcial1/raw/refs/heads/main/res/video.mp4
 
 ---
 
