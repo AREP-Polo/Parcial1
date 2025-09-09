@@ -9,7 +9,7 @@ public class HttpServer {
    ServerSocket serverSocket = null;
    try { 
       serverSocket = new ServerSocket(port);
-      System.out.println("Conected to the server by the port" + port);
+      System.out.println("Conected to the server by the port " + port);
    } catch (IOException e) {
       System.err.println("Could not listen on port: 8080.");
       System.exit(1);
@@ -39,10 +39,10 @@ public class HttpServer {
          + "<html>\n"
          + "<head>\n"
          + "<meta charset=\"UTF-8\">\n"
-         + "<title>Title of the document</title>\n"
+         + "<title>Parcial AREP</title>\n"
          + "</head>\n"
          + "<body>\n"
-         + "<h1>Mi propio mensaje</h1>\n"
+         + "<h1>Hola desde un Servidor Web en Java</h1>\n"
          + "</body>\n"
          + "</html>\n";
     out.println(outputLine);
