@@ -5,6 +5,7 @@ package com.parcial.app;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        HttpServer server = new HttpServer();
+        System.out.println("Hi!");
     }
 }
