@@ -14,7 +14,7 @@ didáctica pensada para demostrar conceptos vistos en clase.
 
 ```bash
 git clone https://github.com/AREP-Polo/Parcial1
-cd Parcial1
+cd Parcial1/parcial
 ```
 
 ## Ejecutar servidor
@@ -54,6 +54,14 @@ servidor de ejemplo.
 
 - `src/main/java` — código fuente Java
 - `src/resources` — recursos estáticos (HTML)
+
+## Video
+
+Puedes ver una demostración en el siguiente video:
+
+<video src="res/video.mp4" controls width="600">
+	Tu navegador no soporta la reproducción de video.
+</video>
 
 ---
 
